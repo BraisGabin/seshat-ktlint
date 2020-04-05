@@ -9,9 +9,9 @@ ktlint -F
 
 diff_file=$(mktemp)
 git diff >${diff_file}
-cat ${diff_file}
 
-git log
+git log >asdf
+cat asdf
 
 pull_number=$(jq --raw-output .pull_request.number "${GITHUB_EVENT_PATH}")
 curl --data-binary "@${diff_file}" \
