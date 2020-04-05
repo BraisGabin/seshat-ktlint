@@ -11,6 +11,8 @@ diff_file=$(mktemp)
 git diff >${diff_file}
 cat ${diff_file}
 
+git log
+
 pull_number=$(jq --raw-output .pull_request.number "${GITHUB_EVENT_PATH}")
 curl --data-binary "@${diff_file}" \
   -H "Content-Type: text/plain" \
