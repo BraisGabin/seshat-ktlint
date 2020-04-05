@@ -4,6 +4,8 @@
 set -e
 
 cd "${GITHUB_WORKSPACE}"
+pwd
+ls -la
 
 ktlint -F
 
